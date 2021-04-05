@@ -1,0 +1,45 @@
+@page "/heatsdata"
+@using Stal.Shared
+@inject HttpClient Http
+
+<h1>Heats</h1>
+
+@if (heats == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Number</th>
+                <th>Data</th>
+                <th>Brigade number</th>
+                <th>Brigade shift</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var heat in heats)
+            {
+                <tr>
+                    <td>@heat.Id</td>
+                    <td>@heat.Number</td>
+                    <td>@heat.Date</td>
+                    <td>@heat.BrigadeNumber</td>
+                    <td>@heat.BrigadeShift</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private Heat[] heats;
+
+    protected override async Task OnInitializedAsync()
+    {
+        heats = await Http.GetFromJsonAsync<Heat[]>("api/heats");
+    }
+}
