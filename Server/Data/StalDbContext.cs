@@ -10,8 +10,7 @@ namespace Stal.Server.Data
 
         public StalDBContext(DbContextOptions<StalDBContext> options)
             : base(options)
-        {
-        }
+        { }
 
 
         [DbFunction("GET_BRIGADE_NUMBER", "public")]

@@ -25,28 +25,28 @@ namespace Stal.Server.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            return await Try(async () => await dBContext.Heats.ToListAsync());
+            return await Try(async () => Ok(await dBContext.Heats.ToListAsync()));
         }
 
-        [HttpGet("brigade/{id}")]
-        public async Task<IActionResult> GetBrigadeWithShift(int id)
+        [HttpGet("brigade/{ticks}")]
+        public async Task<IActionResult> GetBrigadeWithShift(long ticks)
         {
             return await Try
             (
                 async () =>
                 {
-                    return (await dBContext.Heats
-                    .Select(x => new { Heat = x, Brigade = StalDBContext.LinkedGetBrigadeWithShift(x.Date) })
-                    .FirstOrDefaultAsync(x => x.Heat.Id == id)).Brigade;
+                    return Ok(await dBContext.Heats
+                                .Select(x => StalDBContext.LinkedGetBrigadeWithShift(new DateTime(ticks)))
+                                .FirstOrDefaultAsync());
                 }
             );
         }
 
-        private async Task<IActionResult> Try(Func<Task<object>> func)
+        private async Task<IActionResult> Try(Func<Task<IActionResult>> func)
         {
             try
             {
-                return Ok(await func());
+                return await func();
             }
             catch (Exception e)
             {

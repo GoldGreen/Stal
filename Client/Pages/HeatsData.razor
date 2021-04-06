@@ -65,7 +65,7 @@ else
             var heats = await result.Content.ReadFromJsonAsync<Heat[]>();
             var tasks = heats.Select(async x =>
             {
-                int[] brigade = await GetBrigadeWithShift(x.Id);
+                int[] brigade = await GetBrigadeWithShift(x.Date);
                 return new ShareHeat { Heat = x, BrigadeNumber = brigade[0], BrigadeShift = brigade[1] };
             });
 
@@ -78,8 +78,8 @@ else
         }
     }
 
-    public async Task<int[]> GetBrigadeWithShift(int id)
+    public async Task<int[]> GetBrigadeWithShift(DateTime dateTime)
     {
-        return await Http.GetFromJsonAsync<int[]>($"api/heats/brigade/{id}");
+        return await Http.GetFromJsonAsync<int[]>($"api/heats/brigade/{dateTime.Ticks}");
     }
 }
