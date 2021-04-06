@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Stal.Server.Data;
+using Stal.Shared.Log;
 using System;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 
 namespace Stal.Server.Controllers
@@ -12,25 +14,45 @@ namespace Stal.Server.Controllers
     public class HeatsController : ControllerBase
     {
         private readonly StalDBContext dBContext;
+        private readonly ILogger logger;
 
-        public HeatsController(StalDBContext dBContext)
+        public HeatsController(StalDBContext dBContext, ILogger logger)
         {
             this.dBContext = dBContext;
+            this.logger = logger;
         }
 
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            var queryHeats = await dBContext.Heats
-                    .Select(x => new { Heat = x, Brigade = StalDBContext.LinkedGetBrigadeWithShift(x.Date) }).ToListAsync();
+            return await Try(async () => await dBContext.Heats.ToListAsync());
+        }
 
-            foreach (var queryItem in queryHeats)
+        [HttpGet("brigade/{id}")]
+        public async Task<IActionResult> GetBrigadeWithShift(int id)
+        {
+            return await Try
+            (
+                async () =>
+                {
+                    return (await dBContext.Heats
+                    .Select(x => new { Heat = x, Brigade = StalDBContext.LinkedGetBrigadeWithShift(x.Date) })
+                    .FirstOrDefaultAsync(x => x.Heat.Id == id)).Brigade;
+                }
+            );
+        }
+
+        private async Task<IActionResult> Try(Func<Task<object>> func)
+        {
+            try
             {
-                queryItem.Heat.BrigadeNumber = queryItem.Brigade[0];
-                queryItem.Heat.BrigadeShift = queryItem.Brigade[1];
+                return Ok(await func());
             }
-
-            return Ok(queryHeats.Select(x => x.Heat).ToList());
+            catch (Exception e)
+            {
+                logger.Log(e.Message);
+                return Problem();
+            }
         }
     }
 }

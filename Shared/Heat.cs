@@ -15,11 +15,5 @@ namespace Stal.Shared
 
         [Column("HEAT_DATE")]
         public DateTime Date { get; set; }
-
-        [NotMapped]
-        public int BrigadeNumber { get; set; }
-
-        [NotMapped]
-        public int BrigadeShift { get; set; }
     }
 }

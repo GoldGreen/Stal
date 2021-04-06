@@ -1,45 +1,85 @@
-@page "/heatsdata"
+@page "/"
 @using Stal.Shared
+@using Stal.Shared.Log
 @inject HttpClient Http
+@inject ILogger Logger
 
 <h1>Heats</h1>
 
-@if (heats == null)
+@if (isConnected)
 {
-    <p><em>Loading...</em></p>
+
+    @if (shareHeats == null)
+    {
+        <p><em>Loading...</em></p>
+    }
+    else
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Number</th>
+                    <th>Date</th>
+                    <th>Brigade number</th>
+                    <th>Brigade shift</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var shareHeat in shareHeats)
+                {
+                    <tr>
+                        <td>@shareHeat.Heat.Id</td>
+                        <td>@shareHeat.Heat.Number</td>
+                        <td>@shareHeat.Heat.Date</td>
+                        <td>@shareHeat.BrigadeNumber</td>
+                        <td>@shareHeat.BrigadeShift</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
 }
 else
 {
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Number</th>
-                <th>Data</th>
-                <th>Brigade number</th>
-                <th>Brigade shift</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var heat in heats)
-            {
-                <tr>
-                    <td>@heat.Id</td>
-                    <td>@heat.Number</td>
-                    <td>@heat.Date</td>
-                    <td>@heat.BrigadeNumber</td>
-                    <td>@heat.BrigadeShift</td>
-                </tr>
-            }
-        </tbody>
-    </table>
+    <p><em>Can`t connected, try later</em></p>
 }
 
 @code {
-    private Heat[] heats;
+    public class ShareHeat
+    {
+        public Heat Heat { get; set; }
+        public int BrigadeNumber { get; set; }
+        public int BrigadeShift { get; set; }
+    }
+
+    private bool isConnected = true;
+    private ShareHeat[] shareHeats;
 
     protected override async Task OnInitializedAsync()
     {
-        heats = await Http.GetFromJsonAsync<Heat[]>("api/heats");
+        var result = await Http.GetAsync("api/heats");
+        if (result.IsSuccessStatusCode)
+        {
+            isConnected = true;
+            var heats = await result.Content.ReadFromJsonAsync<Heat[]>();
+            var tasks = heats.Select(async x =>
+            {
+                int[] brigade = await GetBrigadeWithShift(x.Id);
+                return new ShareHeat { Heat = x, BrigadeNumber = brigade[0], BrigadeShift = brigade[1] };
+            });
+
+            shareHeats = await Task.WhenAll(tasks);
+        }
+        else
+        {
+            isConnected = false;
+            Logger.Log(result.ReasonPhrase);
+        }
+    }
+
+    public async Task<int[]> GetBrigadeWithShift(int id)
+    {
+        return await Http.GetFromJsonAsync<int[]>($"api/heats/brigade/{id}");
     }
 }
