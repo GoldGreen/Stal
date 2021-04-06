@@ -69,7 +69,7 @@ else
                 return new ShareHeat { Heat = x, BrigadeNumber = brigade[0], BrigadeShift = brigade[1] };
             });
 
-            shareHeats = await Task.WhenAll(tasks);
+            shareHeats = (await Task.WhenAll(tasks)).OrderBy(x => x.Heat.Id).ToArray();
         }
         else
         {
