@@ -1,1 +1,38 @@
 [06.04.2021 10:26:46] An exception has been raised that is likely due to a transient failure.
+[06.04.2021 13:44:35] An exception has been raised that is likely due to a transient failure.
+[06.04.2021 14:15:37] No suitable constructor was found for entity type 'int[]'. The following constructors had parameters that could not be bound to properties of the entity type: cannot bind '' in 'int[](int )'.
+[06.04.2021 14:15:53] No suitable constructor was found for entity type 'int[]'. The following constructors had parameters that could not be bound to properties of the entity type: cannot bind '' in 'int[](int )'.
+[06.04.2021 14:17:27] No suitable constructor was found for entity type 'int[]'. The following constructors had parameters that could not be bound to properties of the entity type: cannot bind '' in 'int[](int )'.
+[06.04.2021 14:20:33] No suitable constructor was found for entity type 'int[]'. The following constructors had parameters that could not be bound to properties of the entity type: cannot bind '' in 'int[](int )'.
+[06.04.2021 14:23:20] No suitable constructor was found for entity type 'int[]'. The following constructors had parameters that could not be bound to properties of the entity type: cannot bind '' in 'int[](int )'.
+[06.04.2021 14:23:34] No suitable constructor was found for entity type 'int[]'. The following constructors had parameters that could not be bound to properties of the entity type: cannot bind '' in 'int[](int )'.
+[06.04.2021 14:27:08] No suitable constructor was found for entity type 'int[]'. The following constructors had parameters that could not be bound to properties of the entity type: cannot bind '' in 'int[](int )'.
+[06.04.2021 14:29:19] The LINQ expression 'new int[][]{ StalDBContext.GetBrigadeWithShift(__dateTime_0) }
+    .FirstOrDefault()' could not be translated. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+[06.04.2021 14:29:19] The LINQ expression 'new int[][]{ StalDBContext.GetBrigadeWithShift(__dateTime_0) }
+    .FirstOrDefault()' could not be translated. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+[06.04.2021 14:29:19] The LINQ expression 'new int[][]{ StalDBContext.GetBrigadeWithShift(__dateTime_0) }
+    .FirstOrDefault()' could not be translated. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+[06.04.2021 14:29:19] The LINQ expression 'new int[][]{ StalDBContext.GetBrigadeWithShift(__dateTime_0) }
+    .FirstOrDefault()' could not be translated. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+[06.04.2021 14:29:19] The LINQ expression 'new int[][]{ StalDBContext.GetBrigadeWithShift(__dateTime_0) }
+    .FirstOrDefault()' could not be translated. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+[06.04.2021 14:29:19] The LINQ expression 'new int[][]{ StalDBContext.GetBrigadeWithShift(__dateTime_0) }
+    .FirstOrDefault()' could not be translated. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+[06.04.2021 14:29:19] The LINQ expression 'new int[][]{ StalDBContext.GetBrigadeWithShift(__dateTime_0) }
+    .FirstOrDefault()' could not be translated. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+[06.04.2021 14:29:19] The LINQ expression 'new int[][]{ StalDBContext.GetBrigadeWithShift(__dateTime_0) }
+    .FirstOrDefault()' could not be translated. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+[06.04.2021 14:29:19] The LINQ expression 'new int[][]{ StalDBContext.GetBrigadeWithShift(__dateTime_0) }
+    .FirstOrDefault()' could not be translated. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+[06.04.2021 14:29:19] The LINQ expression 'new int[][]{ StalDBContext.GetBrigadeWithShift(__dateTime_0) }
+    .FirstOrDefault()' could not be translated. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+[06.04.2021 14:29:19] The LINQ expression 'new int[][]{ StalDBContext.GetBrigadeWithShift(__dateTime_0) }
+    .FirstOrDefault()' could not be translated. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+[06.04.2021 14:29:19] The LINQ expression 'new int[][]{ StalDBContext.GetBrigadeWithShift(__dateTime_0) }
+    .FirstOrDefault()' could not be translated. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+[06.04.2021 14:29:19] The LINQ expression 'new int[][]{ StalDBContext.GetBrigadeWithShift(__dateTime_0) }
+    .FirstOrDefault()' could not be translated. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+[06.04.2021 14:34:46] An exception has been raised that is likely due to a transient failure.
+[06.04.2021 14:37:48] An exception has been raised that is likely due to a transient failure.
+[06.04.2021 14:38:34] An exception has been raised that is likely due to a transient failure.

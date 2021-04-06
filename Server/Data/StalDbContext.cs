@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
 using Stal.Shared;
+using System.Linq;
 
 namespace Stal.Server.Data
 {
@@ -12,9 +13,8 @@ namespace Stal.Server.Data
             : base(options)
         { }
 
-
         [DbFunction("GET_BRIGADE_NUMBER", "public")]
-        public static int[] LinkedGetBrigadeWithShift(DateTime date)
+        public static int[] GetBrigadeWithShift(DateTime date)
         {
             throw new NotImplementedException();
         }

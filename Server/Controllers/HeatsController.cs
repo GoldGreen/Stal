@@ -4,7 +4,6 @@ using Stal.Server.Data;
 using Stal.Shared.Log;
 using System;
 using System.Linq;
-using System.Linq.Expressions;
 using System.Threading.Tasks;
 
 namespace Stal.Server.Controllers
@@ -36,7 +35,7 @@ namespace Stal.Server.Controllers
                 async () =>
                 {
                     return Ok(await dBContext.Heats
-                                .Select(x => StalDBContext.LinkedGetBrigadeWithShift(new DateTime(ticks)))
+                                .Select(x => StalDBContext.GetBrigadeWithShift(new DateTime(ticks)))
                                 .FirstOrDefaultAsync());
                 }
             );

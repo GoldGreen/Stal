@@ -16,12 +16,16 @@ namespace Stal.Shared.Log
 
         public void Log(string message)
         {
-            if (IsWritingDate)
+            lock (this)
             {
-                message = $"[{DateTime.Now}] {message}";
-            }
+                if (IsWritingDate)
+                {
+                    message = $"[{DateTime.Now}] {message}";
+                }
 
-            File.AppendAllText(FileName, message + '\n');
+                Console.WriteLine(message);
+                File.AppendAllText(FileName, message + '\n');
+            }
         }
     }
 }

@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Stal.Shared.Log;
 using System;
+using System.IO;
 using System.Net.Http;
 using System.Threading.Tasks;
 
