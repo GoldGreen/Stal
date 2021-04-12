@@ -36,3 +36,26 @@
 [06.04.2021 14:34:46] An exception has been raised that is likely due to a transient failure.
 [06.04.2021 14:37:48] An exception has been raised that is likely due to a transient failure.
 [06.04.2021 14:38:34] An exception has been raised that is likely due to a transient failure.
+[11.04.2021 8:58:43] No suitable constructor was found for entity type 'int[]'. The following constructors had parameters that could not be bound to properties of the entity type: cannot bind '' in 'int[](int )'.
+[11.04.2021 9:00:20] No suitable constructor was found for entity type 'int[]'. The following constructors had parameters that could not be bound to properties of the entity type: cannot bind '' in 'int[](int )'.
+[11.04.2021 9:01:29] No suitable constructor was found for entity type 'int[]'. The following constructors had parameters that could not be bound to properties of the entity type: cannot bind '' in 'int[](int )'.
+[11.04.2021 9:01:29] No suitable constructor was found for entity type 'int[]'. The following constructors had parameters that could not be bound to properties of the entity type: cannot bind '' in 'int[](int )'.
+[11.04.2021 9:02:01] No suitable constructor was found for entity type 'int[]'. The following constructors had parameters that could not be bound to properties of the entity type: cannot bind '' in 'int[](int )'.
+[11.04.2021 9:45:26] The DbFunction 'Stal.Server.Data.StalDBContext.GetBrigadeWithShift(System.DateTime)' has an invalid return type 'IQueryable<int>'. Non-scalar functions must return 'IQueryable' of a valid entity type.
+[11.04.2021 9:46:25] The DbFunction 'Stal.Server.Data.StalDBContext.GetBrigadeWithShift(System.DateTime)' has an invalid return type 'IQueryable<int>'. Non-scalar functions must return 'IQueryable' of a valid entity type.
+[12.04.2021 10:06:52] Cannot create a DbSet for 'Task' because this type is not included in the model for the context.
+[12.04.2021 10:06:52] Cannot create a DbSet for 'Task' because this type is not included in the model for the context.
+[12.04.2021 10:06:52] Cannot create a DbSet for 'Task' because this type is not included in the model for the context.
+[12.04.2021 10:06:52] Cannot create a DbSet for 'Task' because this type is not included in the model for the context.
+[12.04.2021 10:06:52] Cannot create a DbSet for 'Task' because this type is not included in the model for the context.
+[12.04.2021 10:06:52] Cannot create a DbSet for 'Task' because this type is not included in the model for the context.
+[12.04.2021 10:06:52] Cannot create a DbSet for 'Task' because this type is not included in the model for the context.
+[12.04.2021 10:06:52] Cannot create a DbSet for 'Task' because this type is not included in the model for the context.
+[12.04.2021 10:06:52] Cannot create a DbSet for 'Task' because this type is not included in the model for the context.
+[12.04.2021 10:06:52] Cannot create a DbSet for 'Task' because this type is not included in the model for the context.
+[12.04.2021 10:06:52] Cannot create a DbSet for 'Task' because this type is not included in the model for the context.
+[12.04.2021 10:06:53] Cannot create a DbSet for 'Task' because this type is not included in the model for the context.
+[12.04.2021 10:06:53] Cannot create a DbSet for 'Task' because this type is not included in the model for the context.
+[12.04.2021 10:07:06] Cannot create a DbSet for 'Task' because this type is not included in the model for the context.
+[12.04.2021 10:11:28] The entity type 'Test' requires a primary key to be defined. If you intended to use a keyless entity type, call 'HasNoKey' in 'OnModelCreating'. For more information on keyless entity types, see https://go.microsoft.com/fwlink/?linkid=2141943.
+[12.04.2021 10:14:24] The entity type 'Test' requires a primary key to be defined. If you intended to use a keyless entity type, call 'HasNoKey' in 'OnModelCreating'. For more information on keyless entity types, see https://go.microsoft.com/fwlink/?linkid=2141943.

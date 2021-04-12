@@ -2,6 +2,7 @@
 using System;
 using Stal.Shared;
 using System.Linq;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Stal.Server.Data
 {
@@ -11,7 +12,8 @@ namespace Stal.Server.Data
 
         public StalDBContext(DbContextOptions<StalDBContext> options)
             : base(options)
-        { }
+        {
+        }
 
         [DbFunction("GET_BRIGADE_NUMBER", "public")]
         public static int[] GetBrigadeWithShift(DateTime date)

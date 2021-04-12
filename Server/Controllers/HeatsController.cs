@@ -34,9 +34,9 @@ namespace Stal.Server.Controllers
             (
                 async () =>
                 {
-                    return Ok(await dBContext.Heats
-                                .Select(x => StalDBContext.GetBrigadeWithShift(new DateTime(ticks)))
-                                .FirstOrDefaultAsync());
+                    return Ok(await dBContext.Heats.Take(1)
+                                .Select(_ => StalDBContext.GetBrigadeWithShift(new DateTime(ticks)))
+                                .SingleAsync());
                 }
             );
         }
